@@ -6,6 +6,9 @@
     { id: 'producto4', nombre: 'Gibson SG', precio: 20000, cantidad: 1 },
 ];
 
+
+
+
 // Función para agregar un producto al carrito
 function agregarAlCarrito(nombre, precio) {
     // Creamos un nuevo objeto para el producto
@@ -78,3 +81,93 @@ function cargarCarritoDesdeLocalStorage() {
 
 // Cargamos los productos del carrito almacenados en el localStorage al cargar la página
 cargarCarritoDesdeLocalStorage();
+
+
+
+
+
+
+
+
+//Uso de Fetch
+
+const URL = 'https://jsonplaceholder.typicode.com/users';
+
+// Ejemplo de fetch con async/await
+// Utilizamos async/await para hacer una solicitud HTTP a una API y manejar la respuesta de manera asíncrona
+
+// Definimos una función asíncrona para hacer la solicitud HTTP
+const obtenerUsuarios = async () => {
+    try {
+      // Hacemos la solicitud utilizando fetch y esperamos a que se resuelva la promesa con await
+      const response = await fetch(URL);
+      
+      // Verificamos si la respuesta es exitosa (código de estado 200-299)
+      if (!response.ok) {
+        // Si la respuesta no es exitosa, lanzamos un error con throw
+        throw new Error('Hubo un problema al obtener los datos: ' + response.status);
+      }
+    
+      // Si la respuesta es exitosa, la convertimos a JSON
+      const data = await response.json();
+      console.log(data)
+      // Una vez que tenemos los datos en formato JSON, podemos trabajar con ellos
+      //console.log('Datos obtenidos:', data);
+      // Por ejemplo, podríamos mostrar los nombres de los usuarios en una lista
+      data.forEach(user => {
+
+
+        console.log('Ciudad Origen:', user.address.city);
+        let nuevaSucursal = document.createElement('p');//Esta instruccion crea el elemento pero no lo agrega
+
+        nuevaSucursal.innerHTML = 'Sucursal ' + user.address.city;//Esta instruccion nos agrega el contenido al elemento p creado
+        
+        document.body.appendChild(nuevaSucursal); 
+
+        const estilos = {
+            backgroundColor: 'gray',
+            borderRadius: "5px",
+            width: "300px",
+            border: "1px solid black",
+            textAlign: "center",
+            marginLeft: "20px",
+            fontFamily: "Arial, Helvetica, sans-serif",
+            color: 'white'
+          };
+
+      Object.assign(nuevaSucursal.style, estilos);
+
+      });
+    } catch (error) {
+      // Si ocurre un error durante la solicitud, lo capturamos aquí y lo mostramos en la consola
+      console.error('Se produjo un error: user no existe ', error);
+    }
+  };
+  
+  // Llamamos a la función para obtener los usuarios
+  obtenerUsuarios();
+
+
+
+
+
+
+
+//Uso de libreria sweet alert
+
+  function mostrarAlerta() {
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Producto agregado al carrito",
+        showConfirmButton: false,
+        timer: 1000
+      });
+  }
+
+  function gracias () {
+    Swal.fire({
+            title:"Gracias por tu compra",
+            imageUrl: "./assets/imagen-logo.jpg",
+    })
+}

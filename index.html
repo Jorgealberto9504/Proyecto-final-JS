@@ -30,7 +30,7 @@
                     <a class="nav-link" href="#">Bajos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Agenda Visita</a>
+                    <a class="nav-link" href="#sucursales">Sucursales</a>
                   </li>
                 </ul>
               </div>
@@ -89,7 +89,7 @@
             <div class="card-body">
               <h5 class="card-title">LTD EC 401</h5>
               <p class="card-text"> Tiene un diseño de mástil fijo para un acceso cómodo y rápido a los trastes más altos, y un cuerpo de caoba, mástil de caoba de 3 piezas y diapasón de ébano de Macassar. También incluye afinadores Grover de alta calidad. <br> Precio: <strong>$12,000</strong></p>
-              <a href="#carrito" id="boton-comprar-ec401" class="btn btn-primary" onclick="agregarAlCarrito(tienda[0].nombre, tienda[0].precio)">Comprar</a>
+              <a href="#carrito" id="boton-comprar-ec401" class="btn btn-primary" onclick="agregarAlCarrito(tienda[0].nombre, tienda[0].precio) ; mostrarAlerta()">Comprar</a>
             </div>
           </div>
 
@@ -98,7 +98,7 @@
             <div class="card-body">
               <h5 class="card-title">PRS MIRA CORE</h5>
               <p class="card-text"> Tiene un diseño de mástil fijo para un acceso cómodo y rápido a los trastes más altos, y un cuerpo de caoba, mástil de caoba de 3 piezas y diapasón de ébano de Macassar. También incluye afinadores Grover de alta calidad. <br> Precio: <strong>$25,000</strong></p>              
-              <a href="#carrito" id="boton-comprar-prs" class="btn btn-primary" onclick="agregarAlCarrito(tienda[1].nombre, tienda[1].precio)">Comprar</a>
+              <a href="#carrito" id="boton-comprar-prs" class="btn btn-primary" onclick="agregarAlCarrito(tienda[1].nombre, tienda[1].precio) ; mostrarAlerta()">Comprar</a>
             </div>
           </div>
           
@@ -107,7 +107,7 @@
             <div class="card-body">
               <h5 class="card-title">LTD EC-1000</h5>
               <p class="card-text"> Tiene un diseño de mástil fijo para un acceso cómodo y rápido a los trastes más altos, y un cuerpo de caoba, mástil de caoba de 3 piezas y diapasón de ébano de Macassar. También incluye afinadores Grover de alta calidad. <br> Precio: <strong>$15,000</strong></p>              
-              <a href="#carrito" id="boton-comprar-ec-100" class="btn btn-primary" onclick="agregarAlCarrito(tienda[2].nombre, tienda[2].precio)">Comprar</a>
+              <a href="#carrito" id="boton-comprar-ec-100" class="btn btn-primary" onclick="agregarAlCarrito(tienda[2].nombre, tienda[2].precio); mostrarAlerta()">Comprar</a>
             </div>
           </div>
 
@@ -116,7 +116,7 @@
             <div class="card-body">
               <h5 class="card-title">Gibson SG</h5>
               <p class="card-text"> Tiene un diseño de mástil fijo para un acceso cómodo y rápido a los trastes más altos, y un cuerpo de caoba, mástil de caoba de 3 piezas y diapasón de ébano de Macassar. También incluye afinadores Grover de alta calidad. <br> Precio: <strong>$20,000</strong></p>              
-              <a href="#carrito" id="boton-comprar" class="btn btn-primary" onclick="agregarAlCarrito(tienda[3].nombre, tienda[3].precio)">Comprar</a>
+              <a href="#carrito" id="boton-comprar" class="btn btn-primary" onclick="agregarAlCarrito(tienda[3].nombre, tienda[3].precio); mostrarAlerta()">Comprar</a>
             </div>
           </div>
     </section>
@@ -135,11 +135,18 @@
     </section>
     <p id="total">Total: $0.00</p> <!-- Botón para vaciar el carrito -->
     <button id="vaciarCarrito" onclick="vaciarCarrito()">Vaciar Carrito</button>
+
+  <button onclick="gracias() ; vaciarCarrito()">Comprar</button>
     <!-- Botón para vaciar el carrito -->
     
+    <h2>Sucursales</h2>
+    <section id="sucursales" class="sucursales">
+      
+    </section>
     
     
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>

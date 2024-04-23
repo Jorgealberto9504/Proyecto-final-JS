@@ -18,3 +18,11 @@
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+h2{
+    text-align: center;
+}
+
+#sucursales{
+    margin-left: 200px;
+    text-align: center;
+}
